@@ -1,0 +1,143 @@
+@import url(variable.css);
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container-1{
+    align-self: top;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    
+}
+
+.container-1 h1{
+    font-family: 'D&D', serif;
+    font-size: 4rem;
+    background: linear-gradient(45deg, #f56b6b, #e60000, #f56b6b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 1px 1px 2px #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+
+}
+
+.button1{
+    /* background-color: #e60000; */
+    width: 23.5%;
+    justify-self: center;
+    margin-top: 18%;
+}
+
+.button1 button{ 
+    width: 300px;
+    height: 80px;
+    background: url('marco-con-picos.png') no-repeat center center;
+    background-size: cover;
+    font-family: 'Cinzel', serif;
+    color: goldenrod;
+    font-size: 1.4rem;
+    display: flex;
+    font-family: 'D&D', serif;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: center;
+    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    justify-self: center;
+    background-color: #570202c7;
+    text-shadow:
+    -1px -1px 0 black,
+    1.5px -1px 0 black,
+    -1px  1px 0 black,
+    1.5px  1px 0 black;
+}
+
+.button1 a{
+    text-decoration: none;
+}
+
+/* Para dispositivos con orientacion orizontal */
+@media (orientation: landscape) {
+    body {
+    background-image: url('https://images.hdqwalls.com/download/2023-dungeons-and-dragons-game-6g-1920x1080.jpg');
+    background-size: 100%;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    min-height: 100vh;
+    }
+}
+
+  /* Para dispositivos con orientación vertical */
+@media (orientation: portrait) {
+    body {
+    background-image: url('https://i.pinimg.com/736x/55/a0/0c/55a00c815fbf407d8680250898defab4.jpg');
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    }
+
+    .container-1 h1{
+        font-family: 'D&D', serif;
+        font-size: 2.5rem;
+        background: linear-gradient(45deg, #000000, #000000, #060303);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        text-shadow: 1px 1px 2px rgb(173, 2, 2);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    
+    }
+
+    .button1 button{
+        width: 200px;
+        height: 60px;
+        background: url('marco-con-picos.png') no-repeat center center;
+        background-size: cover;
+        font-family: 'Cinzel', serif;
+        color: rgb(167, 127, 25);
+        font-size: 1.4rem;
+        display: flex;
+        font-family: 'D&D', serif;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 1px 1px 2px black;
+        text-transform: uppercase;
+        align-self: center;
+        justify-self: center;
+        background-color: rgba(57, 2, 2, 0.692);
+        text-shadow:
+        -1px -1px 0 black,
+        1.5px -1px 0 black,
+        -1px  1px 0 black,
+        1.5px  1px 0 black;
+    }
+
+    .button1{
+        /* background-color: #e60000; */
+        width: 23.5%;
+        justify-self: center;
+        margin-top: 30%;
+    }
+    
+
+    .container-1{
+    align-self: top;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+}
