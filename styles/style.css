@@ -19,7 +19,7 @@ body {
 
 .container-1 h1{
     font-family: 'D&D', serif;
-    font-size: 4rem;
+    font-size: 6rem;
     background: linear-gradient(45deg, #f56b6b, #e60000, #f56b6b);
     background-clip: text;
     -webkit-background-clip: text;
