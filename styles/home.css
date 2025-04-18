@@ -9,21 +9,29 @@ body {
     background-size: cover;
 }
 
-.info{
-    justify-content: center;
-    justify-self: center;
+.info {
+    background-image: url('../assets/img/pergamino-home.jpg');
+    /* background-size: cover; */
+    background-position: center;
+    width: 300px;
+    border-radius: 20px;
+    height: 200px;
+    display: flex;              /* Centrado del texto */
     align-items: center;
-    align-self: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
     margin-top: 5%;
-    /* transform: rotate(90deg); */
-    background-color: bisque;
 }
 
-.info img{
-    /* transform: scale(1.5);
-    transform-origin: center; */
-    /* transform: rotate(90deg) */
+.info p {
+    color: #3b2f1d; /* estilo tinta antigua */
+    font-family: 'pirate';
+    font-size: 18px;
+    font-weight: bold;
 }
+
+
 .container-1{
     align-self: top;
     align-items: center;
@@ -37,22 +45,22 @@ body {
     /* background-color: #e60000; */
     position: fixed;
     top: 3%;
-    left: 0;
-    background-color: #333;
-    color: white;
+    right: 15%;
+        /* background-color: #333;
+        color: white; */
     padding: 10px;
     z-index: 100;
     cursor: pointer;
 }
 
 .button1 button{ 
-    width: 220px;
-    height: 70px;
+    width: 175px;
+    height: 60px;
     background: url('marco-con-picos.png') no-repeat center center;
     background-size: cover;
     font-family: 'Cinzel', serif;
     color: goldenrod;
-    font-size: 1.4rem;
+    font-size: 1rem;
     display: flex;
     font-family: 'D&D', serif;
     align-items: center;
@@ -77,22 +85,22 @@ body {
     /* background-color: #e60000; */
     position: fixed;
     top: 3%;
-    right: 0;
-    background-color: #333;
-    color: white;
+    right: 1%;
+    /* background-color: #333;
+    color: white; */
     padding: 10px;
     z-index: 1000;
     cursor: pointer;
 }
 
 .button2 button{ 
-    width: 220px;
-    height: 70px;
+    width: 175px;
+    height: 60px;
     background: url('marco-con-picos.png') no-repeat center center;
     background-size: cover;
     font-family: 'Cinzel', serif;
     color: goldenrod;
-    font-size: 1.4rem;
+    font-size: 1rem;
     display: flex;
     font-family: 'D&D', serif;
     align-items: center;

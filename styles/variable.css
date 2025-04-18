@@ -2,3 +2,8 @@
     font-family: "D&D";
     src: url(../assets/font/Cinzel_Decorative/CinzelDecorative-Black.ttf);
 }
+
+@font-face {
+    font-family: "pirate";
+    src: url(../assets/font/Pirata_One/PirataOne-Regular.ttf);
+}
