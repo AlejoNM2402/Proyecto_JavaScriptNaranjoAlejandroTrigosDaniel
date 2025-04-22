@@ -8,39 +8,165 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="btnCrearPersonaje">Crear Personaje</button>
-    
-    <div id="caracteristicasPersonaje" style="display: none;">
-
-        <label for="clase">Clase:</label>
-        <select id="clase"></select>
+    <div class="container">
+        <h1>Creador de Personajes D&D 5e</h1>
         
-        <label for="raza">Raza:</label>
-        <select id="raza"></select>
+        <div class="tab-buttons">
+            <button id="btnShowCreator" class="btn">Crear Personaje</button>
+            <button id="btnShowSaved" class="btn">Ver Personajes Guardados</button>
+        </div>
         
-        <label for="background">Background:</label>
-        <select id="background"></select>
+        <div id="creatorTab" class="tab-content active">
+            <button id="btnCrearPersonaje" class="btn">Comenzar</button>
+            
+            <div id="caracteristicasPersonaje" class="container">
+                <h2>Crear Nuevo Personaje</h2>
+                
+                <div class="form-group">
+                    <label for="nombrePersonaje">Nombre del Personaje:</label>
+                    <input type="text" id="nombrePersonaje" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="raza">Raza:</label>
+                    <select id="raza"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subraza">Subraza:</label>
+                    <select id="subrazas"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clase">Clase:</label>
+                    <select id="clase"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subclase">Subclase:</label>
+                    <select id="subclases"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="genero">Género:</label>
+                    <select id="genero">
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="background">Trasfondo:</label>
+                    <select id="background"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="alineamiento">Alineamiento:</label>
+                    <select id="alineamiento"></select>
+                </div>
+                
+                <h3>Estadísticas</h3>
+                <div class="stats-grid">
+                    <div class="form-group">
+                        <label for="fuerza">Fuerza:</label>
+                        <input type="number" id="fuerza" min="1" max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="destreza">Destreza:</label>
+                        <input type="number" id="destreza" min="1" max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="constitucion">Constitución:</label>
+                        <input type="number" id="constitucion" min="1" max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="inteligencia">Inteligencia:</label>
+                        <input type="number" id="inteligencia" min="1" max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="sabiduria">Sabiduría:</label>
+                        <input type="number" id="sabiduria" min="1" max="20" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="carisma">Carisma:</label>
+                        <input type="number" id="carisma" min="1" max="20" value="10">
+                    </div>
+                </div>
+                
+                <div class="equipment-section">
+                    <h3>Armaduras y Armas</h3>
+                    <div class="form-group">
+                        <label for="armaSelect">Seleccionar Arma:</label>
+                        <select id="armaSelect">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <button id="btnAgregarArma" class="btn">Agregar</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="armaduraSelect">Seleccionar Armadura:</label>
+                        <select id="armaduraSelect">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                        <button id="btnAgregarArmadura" class="btn">Agregar</button>
+                    </div>
+                    
+                    <h4>Equipo seleccionado:</h4>
+                    <div id="equipoSeleccionado" class="selected-items"></div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Habilidades Especiales</h3>
+                    <select id="features"></select>
+                    <button id="btnAgregarHabilidad" class="btn">Agregar</button>
+                    <div id="habilidadesSeleccionadas" class="selected-items"></div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Accesorios</h3>
+                    <select id="accesorioSelect">
+                        <option value="">Seleccionar...</option>
+                        <option value="casco">Casco</option>
+                        <option value="anillo">Anillo</option>
+                        <option value="amuleto">Amuleto</option>
+                        <option value="capa">Capa</option>
+                        <option value="botas">Botas</option>
+                        <option value="guantes">Guantes</option>
+                    </select>
+                    <input type="text" id="accesorioPersonalizado" placeholder="Nombre personalizado">
+                    <button id="btnAgregarAccesorio" class="btn">Agregar</button>
+                    <div id="accesoriosSeleccionados" class="selected-items"></div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Proficiencias</h3>
+                    <select id="proficiencias"></select>
+                    <button id="btnAgregarProficiencia" class="btn">Agregar</button>
+                    <div id="proficienciasSeleccionadas" class="selected-items"></div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Lenguajes</h3>
+                    <select id="lenguajes"></select>
+                    <button id="btnAgregarLenguaje" class="btn">Agregar</button>
+                    <div id="lenguajesSeleccionados" class="selected-items"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Historia y Detalles:</label>
+                    <textarea id="descripcion" rows="4" placeholder="Describe la personalidad, apariencia y trasfondo de tu personaje..."></textarea>
+                </div>
+                
+                <button id="btnGuardarPersonaje" class="btn">Guardar Personaje</button>
+            </div>
+        </div>
         
-        <label for="alineamiento">Alineamiento:</label>
-        <select id="alineamiento"></select>
-        
-        <label for="habilidades">Habilidades:</label>
-        <select id="habilidades"></select>
-        
-        <label for="proficiencias">Proficiencias:</label>
-        <select id="proficiencias"></select>
-        
-        <label for="lenguajes">Lenguajes:</label>
-        <select id="lenguajes"></select>
-        
-        <label for="features">Características:</label>
-        <select id="features"></select>
-        
-        <label for="subclases">Subclases:</label>
-        <select id="subclases"></select>
-        
-        <label for="subrazas">Subrazas:</label>
-        <select id="subrazas"></select>
+        <div id="savedCharactersTab" class="tab-content">
+            <h2>Personajes Guardados</h2>
+            <div id="listaPersonajes"></div>
+        </div>
     </div>
+    
 </body>
 </html>

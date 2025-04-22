@@ -125,7 +125,7 @@ body {
 @media (orientation: landscape) {
     body {
     background-image: url('https://static2.srcdn.com/wordpress/wp-content/uploads/2017/02/11-tiamat.jpg');
-    background-size: 110%;
+    background-size: cover;
     background-position: center;
     /* background-repeat: no-repeat; */
     min-height: 100vh;
