@@ -124,7 +124,7 @@ body {
 /* Para dispositivos con orientacion orizontal */
 @media (orientation: landscape) {
     body {
-    background-image: url('https://static2.srcdn.com/wordpress/wp-content/uploads/2017/02/11-tiamat.jpg');
+    background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202304/1412/6f8f23277726a505d6c3738c89a2968d3d177fd3737d4377.png');
     background-size: cover;
     background-position: center;
     /* background-repeat: no-repeat; */
@@ -135,8 +135,8 @@ body {
   /* Para dispositivos con orientación vertical */
 @media (orientation: portrait) {
     body {
-    background-image: url('https://i.pinimg.com/736x/55/a0/0c/55a00c815fbf407d8680250898defab4.jpg');
-    background-size: 150%;
+    background-image: url('https://preview.redd.it/blasphemous-iphone-wallpapers-v0-uos02c3zxvgc1.jpg?width=640&crop=smart&auto=webp&s=2c401f9c67c5a0b39aaa470756ac0fd60878e76e');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
