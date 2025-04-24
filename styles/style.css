@@ -1,13 +1,24 @@
 @import url(variable.css);
 
-body {
+/* body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+} */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../assets/img/ft.png'); /* o la ruta que uses */
+    overflow: hidden; /* opcional: para prevenir scroll si algo sobresale */
 }
+
 
 .container-1{
     align-self: top;
@@ -61,20 +72,21 @@ body {
     1.5px -1px 0 black,
     -1px  1px 0 black,
     1.5px  1px 0 black;
+    border-radius: 15px;
 }
 
 .button1 a{
     text-decoration: none;
 }
 
-/* Para dispositivos con orientacion orizontal */
+/* Para dispositivos con orientacion horizontal */
 @media (orientation: landscape) {
     body {
     background-image: url('https://images.hdqwalls.com/download/2023-dungeons-and-dragons-game-6g-1920x1080.jpg');
     background-size: 100%;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    min-height: 100vh;
+    /* background-position: center;
+    background-repeat: no-repeat; */
+    /* min-height: 100vh; */
     }
 }
 

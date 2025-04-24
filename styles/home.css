@@ -6,22 +6,23 @@ body {
     padding: 0;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    /* background-size: cover; */
 }
 
 .info {
     background-image: url('../assets/img/pergamino-home.jpg');
     /* background-size: cover; */
-    background-position: center;
-    width: 300px;
+    /* background-position: center; */
+    width: 20%;
     border-radius: 20px;
-    height: 200px;
-    display: flex;              /* Centrado del texto */
+    height: 15%;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 10px;
     margin-top: 5%;
+    margin-left: 5%;
 }
 
 .info p {
@@ -46,8 +47,8 @@ body {
     position: fixed;
     top: 3%;
     right: 15%;
-        /* background-color: #333;
-        color: white; */
+    /* background-color: #333;*/
+    /*color: white; */
     padding: 10px;
     z-index: 100;
     cursor: pointer;
@@ -75,6 +76,7 @@ body {
     1.5px -1px 0 black,
     -1px  1px 0 black,
     1.5px  1px 0 black;
+    border-radius: 15px;
 }
 
 .button1 a{
@@ -115,6 +117,7 @@ body {
     1.5px -1px 0 black,
     -1px  1px 0 black,
     1.5px  1px 0 black;
+    border-radius: 15px;
 }
 
 .button2 a{
@@ -180,4 +183,23 @@ body {
     justify-items: center;
     text-align: center;
 }
+}
+.info1{
+    background-image: url('../assets/img/pergamino-home.jpg');
+    /* background-size: cover; */
+    /* background-position: center; */
+    width: 20%;
+    border-radius: 20px;
+    height: 15%;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+.info1 p {
+    color: #3b2f1d; /* estilo tinta antigua */
+    font-family: 'pirate';
+    font-size: 18px;
+    font-weight: bold;
 }

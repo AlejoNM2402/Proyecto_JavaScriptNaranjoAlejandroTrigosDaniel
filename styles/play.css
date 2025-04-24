@@ -1,18 +1,24 @@
+
+@import url(variable.css);
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
+
+    background-image: url('../assets/img/ft.png'); /* <-- Cambia esta línea */
+    background-size: cover;
+    /* background-repeat: repeat; */
     color: #333;
 }
 
 h1, h2, h3 {
-    color: #7b2cbf;
+    /* color: #7b2cbf; */
+    font-family: "pirate";
 }
 
 .container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -20,7 +26,7 @@ h1, h2, h3 {
 }
 
 .btn {
-    background-color: #7b2cbf;
+    background-color: rgba(57, 2, 2, 0.692);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -29,6 +35,8 @@ h1, h2, h3 {
     font-size: 16px;
     transition: background-color 0.3s;
     margin: 10px 0;
+    font-family: "pirate";
+
 }
 
 .btn:hover {
@@ -62,6 +70,9 @@ input, select, textarea {
 
 #caracteristicasPersonaje {
     display: none;
+    font-family: "pirate";
+    background-color: rgba(255, 255, 255, 0.2);
+
 }
 
 .character-card {
@@ -94,6 +105,9 @@ input, select, textarea {
 
 .equipment-section {
     margin-top: 20px;
+    font-family: "pirate";
+    font-size: 20px;
+
 }
 
 .selected-items {
@@ -121,3 +135,32 @@ input, select, textarea {
     margin-left: 5px;
     cursor: pointer;
 }
+
+.button-link {
+    width: 200px;
+    height: 60px;
+    background-size: cover;
+    font-family: 'Cinzel', serif;
+    color: rgb(167, 127, 25);
+    font-size: 1.4rem;
+    display: flex;
+    font-family: 'D&D', serif;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    align-self: center;
+    background-color: rgba(57, 2, 2, 0.692);
+    text-shadow:
+    -1px -1px 0 black,
+    1.5px -1px 0 black,
+    -1px  1px 0 black,
+    1.5px  1px 0 black;
+    margin-bottom: 2%;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+/* .button-link:hover {
+    background-color: #0056b3;
+} */
