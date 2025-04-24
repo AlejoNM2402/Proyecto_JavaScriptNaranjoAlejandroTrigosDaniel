@@ -1,18 +1,18 @@
-// Mapeo de imágenes para razas (aquí puedes agregar más razas según necesites)
+// Imagenes que apareceran en las tarjetas de cada personaje creade dependiendo su raza
 const razaImagenes = {
-    "dragonborn": "https://cdnb.artstation.com/p/assets/images/images/047/067/749/large/clint-cearley-draconian-final-by-clint-cearley.jpg?1646681308",
+    "dragonborn": "https://cdnb.artstation.com/p/assets/images/images/040/208/865/large/stu-harrington-anubis-deathdragon-stuharrington.jpg?1628173232",
     "dwarf": "https://cdnb.artstation.com/p/assets/images/images/029/056/277/large/diego-vila-turin-stormeye3.jpg?1596318545",
     "elf": "https://cdna.artstation.com/p/assets/images/images/074/590/546/large/duong-lam-ranger-final-v2.jpg?1712443792",
     "gnome": "https://cdnb.artstation.com/p/assets/images/images/026/915/751/large/rina-saethra-leera-and-brownie-00-copy-small.jpg?1590076399",
     "half-elf": "https://cdna.artstation.com/p/assets/images/images/077/926/954/large/zen-adventurer-bathed-in-sunrise.jpg?1720711685",
-    "half-orc": "../assets/img/razas/half-orc.jpg",
-    "halfling": "../assets/img/razas/halfling.jpg",
-    "human": "../assets/img/razas/human.jpg",
-    "tiefling": "../assets/img/razas/tiefling.jpg",
-    "default": "../assets/img/razas/default.jpg" // Humano normal
+    "half-orc": "https://cdna.artstation.com/p/assets/images/images/056/133/718/large/krzysztof-porchowski-jr-painted-warrior-illustration-final.jpg?1668533943",
+    "halfling": "https://cdnb.artstation.com/p/assets/images/images/026/372/189/20200504110244/smaller_square/natalia-verauko-trykowska-gwennafred01-fin-medium.jpg?1588608165",
+    "human": "https://cdna.artstation.com/p/assets/images/images/030/212/610/large/leo-gr1dwaf.jpg?1599934251",
+    "tiefling": "https://cdnb.artstation.com/p/assets/images/images/019/358/075/large/victor-tan-co-thiefling-v2-lr.jpg?1563137340",
+    "default": "https://cdna.artstation.com/p/assets/images/images/030/212/610/large/leo-gr1dwaf.jpg?1599934251" // Humano normal
 };
 
-// Función genérica para cargar datos desde la API
+// Carga de datos de la API
 function cargarSelect(endpoint, selectId) {
     fetch(`https://www.dnd5eapi.co/api/${endpoint}`)
         .then(res => res.json())
@@ -31,9 +31,9 @@ function cargarSelect(endpoint, selectId) {
         .catch(err => console.error(`Error al cargar ${selectId}:`, err));
 }
 
-// Cargar equipo específico
+// equipo específico
 function cargarEquipo() {
-    // Cargar armas
+    // armas
     fetch('https://www.dnd5eapi.co/api/equipment-categories/weapon')
         .then(res => res.json())
         .then(data => {
@@ -49,7 +49,7 @@ function cargarEquipo() {
         })
         .catch(err => console.error('Error al cargar armas:', err));
 
-    // Cargar armaduras
+    // armaduras
     fetch('https://www.dnd5eapi.co/api/equipment-categories/armor')
         .then(res => res.json())
         .then(data => {
@@ -66,18 +66,18 @@ function cargarEquipo() {
         .catch(err => console.error('Error al cargar armaduras:', err));
 }
 
-// Función que carga todos los datos 
+// Funcion para cargar todos los datos desde la api
 function cargarDatosPersonaje() {
-    // Mostrar el contenedor de características
+    // Mostrar las características
     document.getElementById("caracteristicasPersonaje").style.display = "block";
     document.getElementById("btnCrearPersonaje").style.display = "none";
 
-    // Cargar datos para seleccionar
+    // Cargar de seleccion
     cargarSelect("classes", "clase");
     cargarSelect("races", "raza");
     cargarSelect("features", "features");
 
-    // Cargar equipo
+    // Cargar equipos
     cargarEquipo();
 }
 
@@ -87,7 +87,7 @@ function agregarItem(valor, texto, contenedorId) {
 
     const contenedor = document.getElementById(contenedorId);
 
-    // Verificar si ya existe
+    // Verificar si ya existe el item
     const items = contenedor.querySelectorAll('.item-tag');
     for (let item of items) {
         if (item.dataset.valor === valor) return;
@@ -124,7 +124,7 @@ function obtenerItemsSeleccionados(contenedorId) {
     return items;
 }
 
-// Función para guardar un personaje
+// Función para guardar el guardado de personajes
 function guardarPersonaje() {
     const nombre = document.getElementById("nombrePersonaje").value;
     if (!nombre) {
@@ -174,7 +174,7 @@ function guardarPersonaje() {
         imagen: razaImagenes[razaValor] || razaImagenes["default"]
     };
 
-    // Obtener personajes existentes o inicializar un array vacío
+    // Obtener personajes existentes o crear un array vacio
     let personajesGuardados = JSON.parse(localStorage.getItem("personajesDnD")) || [];
 
     // Agregar el nuevo personaje
@@ -185,15 +185,13 @@ function guardarPersonaje() {
 
     alert("¡Personaje guardado exitosamente!");
 
-    // Limpiar formulario
     document.getElementById("nombrePersonaje").value = "";
     document.getElementById("caracteristicasPersonaje").style.display = "none";
     document.getElementById("btnCrearPersonaje").style.display = "block";
 
-    // Actualizar lista de personajes
+    // Actualizacion de la lista
     cargarPersonajesGuardados();
 
-    // Mostrar la pestaña de personajes guardados
     cambiarPestana('savedCharactersTab');
 }
 
@@ -227,14 +225,13 @@ function cargarPersonajesGuardados() {
         listaPersonajes.appendChild(card);
     });
 
-    // Agregar event listeners a los botones de detalles
+    // eventos de escucha a los botones de detalles
     document.querySelectorAll('.ver-detalles').forEach(btn => {
         btn.addEventListener('click', () => mostrarDetallesPersonaje(btn.dataset.id));
     });
 }
 
-// ===== NUEVA IMPLEMENTACIÓN DE ELIMINAR PERSONAJE =====
-// Esta función ahora usa un botón creado con JavaScript en lugar de HTML
+// funcion Eliminacion de personajes
 function eliminarPersonaje(id) {
     if (!confirm("¿Estás seguro de querer eliminar este personaje?")) return;
     
@@ -268,7 +265,6 @@ function mostrarDetallesPersonaje(id) {
     const modal = document.getElementById("personajeModal");
     const detalles = document.getElementById("detallesPersonaje");
 
-    // Crear estadísticas HTML
     let statsHTML = '<div class="stats-detail">';
     for (const [stat, value] of Object.entries(personaje.estadisticas)) {
         statsHTML += `<div class="stat-item">${stat.charAt(0).toUpperCase() + stat.slice(1)}: ${value}</div>`;
@@ -291,7 +287,7 @@ function mostrarDetallesPersonaje(id) {
         accesoriosHTML += `<span class="item-tag">${item.texto}</span>`;
     });
 
-    // Construir HTML para los detalles (SIN BOTÓN DE ELIMINAR)
+    // HTML de detalles
     detalles.innerHTML = `
         <img src="${personaje.imagen}" alt="${personaje.nombre}" class="character-detail-img">
         <h2>${personaje.nombre}</h2>
@@ -325,7 +321,7 @@ function mostrarDetallesPersonaje(id) {
         <div id="deleteButtonContainer"></div>
     `;
     
-    // Crear botón de eliminar con JavaScript
+    // boton d eliminar
     const deleteButton = document.createElement('button');
     deleteButton.className = 'btn btn-delete';
     deleteButton.textContent = 'Eliminar Personaje';
@@ -333,18 +329,14 @@ function mostrarDetallesPersonaje(id) {
         eliminarPersonaje(personaje.id);
     });
     
-    // Agregar el botón al contenedor
     document.getElementById('deleteButtonContainer').appendChild(deleteButton);
 
-    // Mostrar el modal
     modal.style.display = "block";
 
-    // Cerrar modal al hacer clic en la X
     document.querySelector(".close").onclick = function() {
         modal.style.display = "none";
     };
 
-    // Cerrar modal al hacer clic fuera del contenido
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -352,18 +344,16 @@ function mostrarDetallesPersonaje(id) {
     };
 }
 
-// Función para cambiar entre pestañas
+// Función de cambio entre pestañas
 function cambiarPestana(tabId) {
     // Ocultar todas las pestañas
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.remove('active');
     });
 
-    // Mostrar la pestaña seleccionada
     document.getElementById(tabId).classList.add('active');
 }
 
-// Event listeners
 document.addEventListener("DOMContentLoaded", function() {
     // Botón para iniciar creación de personaje
     const btnCrearPersonaje = document.getElementById("btnCrearPersonaje");
@@ -373,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnGuardarPersonaje = document.getElementById("btnGuardarPersonaje");
     btnGuardarPersonaje.addEventListener("click", guardarPersonaje);
 
-    // Cambiar entre pestañas
+    // Cambiar de pestaña
     document.getElementById("btnShowCreator").addEventListener("click", function() {
         cambiarPestana('creatorTab');
     });
@@ -383,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cargarPersonajesGuardados();
     });
 
-    // Event listeners para agregar items
+    // agregar items
     document.getElementById("btnAgregarArma").addEventListener("click", function() {
         const select = document.getElementById("armaSelect");
         if (select.value) {
@@ -428,5 +418,5 @@ document.addEventListener("DOMContentLoaded", function() {
     cargarPersonajesGuardados();
 });
 
-// Esto es necesario para que la función sea accesible globalmente (por si acaso)
+// FUncion de eliminar personaje para accesibilidad global
 window.eliminarPersonaje = eliminarPersonaje;
