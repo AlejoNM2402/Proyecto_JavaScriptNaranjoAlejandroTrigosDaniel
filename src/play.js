@@ -1,4 +1,4 @@
-// Imagenes que apareceran en las tarjetas de cada personaje creade dependiendo su raza
+// Imagenes que apareceran en las tarjetas de cada personaje creado dependiendo su raza
 const razaImagenes = {
     "dragonborn": "https://cdnb.artstation.com/p/assets/images/images/040/208/865/large/stu-harrington-anubis-deathdragon-stuharrington.jpg?1628173232",
     "dwarf": "https://cdnb.artstation.com/p/assets/images/images/029/056/277/large/diego-vila-turin-stormeye3.jpg?1596318545",
@@ -9,7 +9,6 @@ const razaImagenes = {
     "halfling": "https://cdnb.artstation.com/p/assets/images/images/026/372/189/20200504110244/smaller_square/natalia-verauko-trykowska-gwennafred01-fin-medium.jpg?1588608165",
     "human": "https://cdna.artstation.com/p/assets/images/images/030/212/610/large/leo-gr1dwaf.jpg?1599934251",
     "tiefling": "https://cdnb.artstation.com/p/assets/images/images/019/358/075/large/victor-tan-co-thiefling-v2-lr.jpg?1563137340",
-    "default": "https://cdna.artstation.com/p/assets/images/images/030/212/610/large/leo-gr1dwaf.jpg?1599934251" // Humano normal
 };
 
 // Carga de datos de la API
