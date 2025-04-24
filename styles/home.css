@@ -141,6 +141,27 @@ body {
     }
 }
 
+.info1{
+    background-image: url('../assets/img/pergamino-home.jpg');
+    /* background-size: cover; */
+    /* background-position: center; */
+    width: 25%;
+    border-radius: 20px;
+    height: 15%;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    /* margin-top: 10%; */
+    margin-left: 30%;
+}
+.info1 p {
+    color: #070303; /* estilo tinta antigua */
+    font-family: 'pirate';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 
 
   /* Para dispositivos con orientación vertical */
@@ -224,7 +245,8 @@ body {
         /* background-color: #e60000; */
         width: 23.5%;
         justify-self: center;
-        left: 30%;
+        right: 2%;
+        top: 14%;
         cursor: pointer;
     }
     
@@ -240,13 +262,13 @@ body {
     background-image: url('../assets/img/pergamino-home.jpg');
     /* background-size: cover; */
     /* background-position: center; */
-    width: 25%;
+    width: 30%;
     border-radius: 20px;
     height: 15%;
     display: flex;
     text-align: center;
     padding: 10px;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     margin-left: 30%;
 }
 .info1 p {
