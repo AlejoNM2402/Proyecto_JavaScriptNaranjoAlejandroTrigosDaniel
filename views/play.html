@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/play.css">
     <script src="../js/play.js" defer type="module"></script>
-    <title>Document</title>
+    <title>Creador de Personajes D&D</title>
 </head>
 <body>
     <div>
@@ -25,31 +25,25 @@
             <div id="caracteristicasPersonaje" class="container">
                 <h2>Crear Nuevo Personaje</h2>
                 
+                <!-- Nombre -->
                 <div class="form-group">
                     <label for="nombrePersonaje">Nombre del Personaje:</label>
                     <input type="text" id="nombrePersonaje" required>
                 </div>
                 
+                <!-- Raza -->
                 <div class="form-group">
                     <label for="raza">Raza:</label>
                     <select id="raza"></select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="subraza">Subraza:</label>
-                    <select id="subrazas"></select>
-                </div>
-                
+                <!-- Clase -->
                 <div class="form-group">
                     <label for="clase">Clase:</label>
                     <select id="clase"></select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="subclase">Subclase:</label>
-                    <select id="subclases"></select>
-                </div>
-                
+                <!-- Género -->
                 <div class="form-group">
                     <label for="genero">Género:</label>
                     <select id="genero">
@@ -59,44 +53,36 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="background">Trasfondo:</label>
-                    <select id="background"></select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="alineamiento">Alineamiento:</label>
-                    <select id="alineamiento"></select>
-                </div>
-                
+                <!-- Estadísticas -->
                 <h3>Estadísticas</h3>
                 <div class="stats-grid">
                     <div class="form-group">
                         <label for="fuerza">Fuerza:</label>
-                        <input type="number" id="fuerza" min="1" max="20" value="10">
+                        <input type="number" id="fuerza" min="1" max="100" value="10">
                     </div>
                     <div class="form-group">
                         <label for="destreza">Destreza:</label>
-                        <input type="number" id="destreza" min="1" max="20" value="10">
+                        <input type="number" id="destreza" min="1" max="100" value="10">
                     </div>
                     <div class="form-group">
                         <label for="constitucion">Constitución:</label>
-                        <input type="number" id="constitucion" min="1" max="20" value="10">
+                        <input type="number" id="constitucion" min="1" max="100" value="10">
                     </div>
                     <div class="form-group">
                         <label for="inteligencia">Inteligencia:</label>
-                        <input type="number" id="inteligencia" min="1" max="20" value="10">
+                        <input type="number" id="inteligencia" min="1" max="100" value="10">
                     </div>
                     <div class="form-group">
                         <label for="sabiduria">Sabiduría:</label>
-                        <input type="number" id="sabiduria" min="1" max="20" value="10">
+                        <input type="number" id="sabiduria" min="1" max="100" value="10">
                     </div>
                     <div class="form-group">
                         <label for="carisma">Carisma:</label>
-                        <input type="number" id="carisma" min="1" max="20" value="10">
+                        <input type="number" id="carisma" min="1" max="100" value="10">
                     </div>
                 </div>
                 
+                <!-- Armaduras y Armas -->
                 <div class="equipment-section">
                     <h3>Armaduras y Armas</h3>
                     <div class="form-group">
@@ -119,13 +105,17 @@
                     <div id="equipoSeleccionado" class="selected-items"></div>
                 </div>
                 
+                <!-- Habilidades Especiales -->
                 <div class="form-group">
                     <h3>Habilidades Especiales</h3>
-                    <select id="features"></select>
+                    <select id="features">
+                        <option value="">Seleccionar...</option>
+                    </select>
                     <button id="btnAgregarHabilidad" class="btn">Agregar</button>
                     <div id="habilidadesSeleccionadas" class="selected-items"></div>
                 </div>
                 
+                <!-- Accesorios -->
                 <div class="form-group">
                     <h3>Accesorios</h3>
                     <select id="accesorioSelect">
@@ -142,33 +132,23 @@
                     <div id="accesoriosSeleccionados" class="selected-items"></div>
                 </div>
                 
-                <div class="form-group">
-                    <h3>Proficiencias</h3>
-                    <select id="proficiencias"></select>
-                    <button id="btnAgregarProficiencia" class="btn">Agregar</button>
-                    <div id="proficienciasSeleccionadas" class="selected-items"></div>
-                </div>
-                
-                <div class="form-group">
-                    <h3>Lenguajes</h3>
-                    <select id="lenguajes"></select>
-                    <button id="btnAgregarLenguaje" class="btn">Agregar</button>
-                    <div id="lenguajesSeleccionados" class="selected-items"></div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="descripcion">Historia y Detalles:</label>
-                    <textarea id="descripcion" rows="4" placeholder="Describe la personalidad, apariencia y trasfondo de tu personaje..."></textarea>
-                </div>
                 <button id="btnGuardarPersonaje" class="btn">Guardar Personaje</button>
             </div>
         </div>
         
+        <!-- Sección para personajes guardados -->
         <div id="savedCharactersTab" class="tab-content">
             <h2>Personajes Guardados</h2>
-            <div id="listaPersonajes"></div>
+            <div id="listaPersonajes" class="characters-grid"></div>
+        </div>
+        
+        <!-- Modal para detalles del personaje -->
+        <div id="personajeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="detallesPersonaje"></div>
+            </div>
         </div>
     </div>
-    
 </body>
 </html>

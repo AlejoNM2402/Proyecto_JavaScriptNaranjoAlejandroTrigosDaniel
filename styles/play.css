@@ -1,19 +1,16 @@
-
 @import url(variable.css);
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-
-    background-image: url('../assets/img/ft.png'); /* <-- Cambia esta línea */
+    background-image: url('../assets/img/ft.png');
     background-size: cover;
-    /* background-repeat: repeat; */
     color: #333;
 }
 
 h1, h2, h3 {
-    /* color: #7b2cbf; */
     font-family: "pirate";
 }
 
@@ -36,7 +33,6 @@ h1, h2, h3 {
     transition: background-color 0.3s;
     margin: 10px 0;
     font-family: "pirate";
-
 }
 
 .btn:hover {
@@ -72,21 +68,44 @@ input, select, textarea {
     display: none;
     font-family: "pirate";
     background-color: rgba(255, 255, 255, 0.2);
+}
 
+/* Estilos para las tarjetas de personajes */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .character-card {
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
-.character-card h3 {
+.character-card:hover {
+    transform: translateY(-5px);
+}
+
+.character-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid rgba(57, 2, 2, 0.692);
+}
+
+.character-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.character-info h3 {
     margin-top: 0;
-    color: #7b2cbf;
+    color: rgba(57, 2, 2, 0.892);
+    font-size: 1.4rem;
 }
 
 .tab-buttons {
@@ -107,7 +126,6 @@ input, select, textarea {
     margin-top: 20px;
     font-family: "pirate";
     font-size: 20px;
-
 }
 
 .selected-items {
@@ -120,7 +138,7 @@ input, select, textarea {
 
 .item-tag {
     display: inline-block;
-    background-color: #7b2cbf;
+    background-color: rgba(57, 2, 2, 0.692);
     color: white;
     padding: 3px 8px;
     border-radius: 3px;
@@ -161,6 +179,76 @@ input, select, textarea {
     text-decoration: none;
 }
 
-/* .button-link:hover {
-    background-color: #0056b3;
-} */
+/* Modal para detalles del personaje */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    color: rgba(57, 2, 2, 0.692);
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.character-detail-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid rgba(57, 2, 2, 0.692);
+}
+
+.character-detail-section {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.stats-detail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.stat-item {
+    background-color: rgba(57, 2, 2, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
