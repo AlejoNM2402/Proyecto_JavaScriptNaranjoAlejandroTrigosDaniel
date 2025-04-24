@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/play.css">
-    <script src="../js/play.js" defer type="module"></script>
+    <script src="../src/play.js" defer type="module"></script>
     <title>Creador de Personajes D&D</title>
 </head>
 <body>
@@ -25,25 +25,25 @@
             <div id="caracteristicasPersonaje" class="container">
                 <h2>Crear Nuevo Personaje</h2>
                 
-                <!-- Nombre -->
+                
                 <div class="form-group">
                     <label for="nombrePersonaje">Nombre del Personaje:</label>
                     <input type="text" id="nombrePersonaje" required>
                 </div>
                 
-                <!-- Raza -->
+            
                 <div class="form-group">
                     <label for="raza">Raza:</label>
                     <select id="raza"></select>
                 </div>
                 
-                <!-- Clase -->
+                
                 <div class="form-group">
                     <label for="clase">Clase:</label>
                     <select id="clase"></select>
                 </div>
                 
-                <!-- Género -->
+                
                 <div class="form-group">
                     <label for="genero">Género:</label>
                     <select id="genero">
@@ -53,7 +53,7 @@
                     </select>
                 </div>
                 
-                <!-- Estadísticas -->
+                
                 <h3>Estadísticas</h3>
                 <div class="stats-grid">
                     <div class="form-group">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 
-                <!-- Armaduras y Armas -->
+                
                 <div class="equipment-section">
                     <h3>Armaduras y Armas</h3>
                     <div class="form-group">
@@ -105,7 +105,7 @@
                     <div id="equipoSeleccionado" class="selected-items"></div>
                 </div>
                 
-                <!-- Habilidades Especiales -->
+            
                 <div class="form-group">
                     <h3>Habilidades Especiales</h3>
                     <select id="features">
@@ -115,7 +115,7 @@
                     <div id="habilidadesSeleccionadas" class="selected-items"></div>
                 </div>
                 
-                <!-- Accesorios -->
+                
                 <div class="form-group">
                     <h3>Accesorios</h3>
                     <select id="accesorioSelect">
@@ -136,13 +136,11 @@
             </div>
         </div>
         
-        <!-- Sección para personajes guardados -->
         <div id="savedCharactersTab" class="tab-content">
             <h2>Personajes Guardados</h2>
             <div id="listaPersonajes" class="characters-grid"></div>
         </div>
         
-        <!-- Modal para detalles del personaje -->
         <div id="personajeModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>

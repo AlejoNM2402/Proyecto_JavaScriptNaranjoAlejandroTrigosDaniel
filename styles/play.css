@@ -70,7 +70,6 @@ input, select, textarea {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Estilos para las tarjetas de personajes */
 .characters-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -155,12 +154,12 @@ input, select, textarea {
 }
 
 .button-link {
-    width: 200px;
-    height: 60px;
+    width: 100px;
+    height: 50px;
     background-size: cover;
     font-family: 'Cinzel', serif;
     color: rgb(167, 127, 25);
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     display: flex;
     font-family: 'D&D', serif;
     align-items: center;
@@ -179,7 +178,7 @@ input, select, textarea {
     text-decoration: none;
 }
 
-/* Modal para detalles del personaje */
+
 .modal {
     display: none;
     position: fixed;
@@ -251,4 +250,18 @@ input, select, textarea {
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
+}
+
+
+@media (orientation: portrait) {
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-position: fixed;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-image: url('../assets/img/responsive-backgroun.jpg');
+        background-size: cover;
+        color: #333;
+    }
 }
