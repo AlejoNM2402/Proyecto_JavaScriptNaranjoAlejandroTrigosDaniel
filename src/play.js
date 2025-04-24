@@ -32,7 +32,7 @@ function cargarSelect(endpoint, selectId) {
 
 // equipo específico
 function cargarEquipo() {
-    // armas
+    // endpoint armas
     fetch('https://www.dnd5eapi.co/api/equipment-categories/weapon')
         .then(res => res.json())
         .then(data => {
@@ -48,7 +48,7 @@ function cargarEquipo() {
         })
         .catch(err => console.error('Error al cargar armas:', err));
 
-    // armaduras
+    // endpoint armaduras
     fetch('https://www.dnd5eapi.co/api/equipment-categories/armor')
         .then(res => res.json())
         .then(data => {
