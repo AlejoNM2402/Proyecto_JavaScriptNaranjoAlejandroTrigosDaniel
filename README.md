@@ -16,7 +16,7 @@ Este proyecto es una aplicación web interactiva para crear personajes de Dungeo
 ![Pagina con el programa principal funcional (personajes guardados)](assets/img/guardados.png)
 
 
-Esto es solo un vistazo previo, puedes ver el programa clonando el repositorio y ejecutandolo o picando 
+(Esto es solo un vistazo previo)
 
 ---
 
@@ -53,4 +53,4 @@ Esta aplicación utiliza la API pública de Dungeons & Dragons 5e, que no requie
 
 
  ## Gracias por usar este programa y por interesarte al respecto
- 
+
