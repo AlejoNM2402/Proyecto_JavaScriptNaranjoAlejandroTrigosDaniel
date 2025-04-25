@@ -86,7 +86,6 @@ function agregarItem(valor, texto, contenedorId) {
 
     const contenedor = document.getElementById(contenedorId);
 
-    // Verificar si ya existe el item
     const items = contenedor.querySelectorAll('.item-tag');
     for (let item of items) {
         if (item.dataset.valor === valor) return;
@@ -98,7 +97,7 @@ function agregarItem(valor, texto, contenedorId) {
     tag.textContent = texto;
 
     const btnEliminar = document.createElement('button');
-    btnEliminar.textContent = '×';
+    btnEliminar.textContent = 'x';
     btnEliminar.onclick = function() {
         contenedor.removeChild(tag);
     };
